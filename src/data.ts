@@ -1,6 +1,6 @@
 export type Spec = { labelEn: string; labelAr: string; valueEn: string; valueAr: string }
 export type Product = {
-  id: string; category: string; icon: string; color: string; price: number; oldPrice?: number
+  id: string; category: string; icon: string; color: string; price: number; oldPrice?: number; image: string
   nameEn: string; nameAr: string; descEn: string; descAr: string
   rating: number; reviews: number; stock: number; badge?: string
   specs: Spec[]; extra?: Record<string, string>
@@ -16,6 +16,7 @@ export const PRODUCTS: Product[] = [
     "icon": "DeviceMobile",
     "color": "#1F2A44",
     "price": 4899.37,
+    "image": "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Nova X7 phone",
     "nameAr": "هاتف نوفا X7",
     "descEn": "A 6.4 inch phone with a 108 MP camera and two day battery life",
@@ -61,6 +62,7 @@ export const PRODUCTS: Product[] = [
     "icon": "Laptop",
     "color": "#273449",
     "price": 12749.51,
+    "image": "https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "AeroBook 14 laptop",
     "nameAr": "لابتوب أيرو بوك 14",
     "descEn": "A 14 inch laptop with 16 GB memory and a 512 GB drive for work and study",
@@ -105,6 +107,7 @@ export const PRODUCTS: Product[] = [
     "icon": "Headphones",
     "color": "#3A2B4F",
     "price": 1249.63,
+    "image": "https://images.pexels.com/photos/7772548/pexels-photo-7772548.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Pulse buds pro",
     "nameAr": "سماعات بالس برو",
     "descEn": "Wireless earbuds with active noise cancelling and 32 hours of total playtime",
@@ -150,6 +153,7 @@ export const PRODUCTS: Product[] = [
     "icon": "Watch",
     "color": "#123B33",
     "price": 2399.17,
+    "image": "https://images.pexels.com/photos/5081914/pexels-photo-5081914.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Halo watch S2",
     "nameAr": "ساعة هالو S2",
     "descEn": "A smartwatch with heart rate and sleep tracking and a 10 day battery",
@@ -194,6 +198,7 @@ export const PRODUCTS: Product[] = [
     "icon": "SpeakerHigh",
     "color": "#4A2C1A",
     "price": 899.43,
+    "image": "https://images.pexels.com/photos/14309806/pexels-photo-14309806.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Echo room speaker",
     "nameAr": "سماعة إيكو للغرفة",
     "descEn": "A room speaker with clear vocals, deep bass, and voice control",
@@ -237,6 +242,7 @@ export const PRODUCTS: Product[] = [
     "icon": "Camera",
     "color": "#2E2A26",
     "price": 8349.29,
+    "image": "https://images.pexels.com/photos/16387546/pexels-photo-16387546/free-photo-of-popular-technology-items.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Lens Pro camera",
     "nameAr": "كاميرا لينس برو",
     "descEn": "A mirrorless camera with a 24 MP sensor and 4K video for creators",
@@ -281,6 +287,7 @@ export const PRODUCTS: Product[] = [
     "icon": "DeviceTablet",
     "color": "#1E3A4F",
     "price": 3199.71,
+    "image": "https://images.pexels.com/photos/3945691/pexels-photo-3945691.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Tab Lite 11",
     "nameAr": "تابلت تاب لايت 11",
     "descEn": "An 11 inch tablet for reading, notes, and streaming, with stylus support",
@@ -324,6 +331,7 @@ export const PRODUCTS: Product[] = [
     "icon": "BatteryCharging",
     "color": "#3B2E12",
     "price": 349.87,
+    "image": "https://images.pexels.com/photos/5208781/pexels-photo-5208781.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Volt 65W charger",
     "nameAr": "شاحن فولت 65 واط",
     "descEn": "A compact 65 W GaN charger with two USB-C ports and one USB-A port",
@@ -367,6 +375,7 @@ export const PRODUCTS: Product[] = [
     "icon": "PaperPlaneTilt",
     "color": "#243447",
     "price": 6499.13,
+    "image": "https://images.pexels.com/photos/3619918/pexels-photo-3619918.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Orbit drone mini",
     "nameAr": "درون أوربت ميني",
     "descEn": "A foldable drone with a 4K camera, 34 minute flight time, and obstacle sensing",
@@ -411,6 +420,7 @@ export const PRODUCTS: Product[] = [
     "icon": "Television",
     "color": "#1F1F2B",
     "price": 549.59,
+    "image": "https://images.pexels.com/photos/16888144/pexels-photo-16888144/free-photo-of-electronic-devices-on-white-background.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Stream stick 4K",
     "nameAr": "عصا ستريم 4K",
     "descEn": "A streaming stick that turns any TV into a 4K smart TV with voice remote",
@@ -454,6 +464,7 @@ export const PRODUCTS: Product[] = [
     "icon": "Keyboard",
     "color": "#33261F",
     "price": 1099.23,
+    "image": "https://images.pexels.com/photos/222835/pexels-photo-222835.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Mech keyboard 75",
     "nameAr": "لوحة مفاتيح ميك 75",
     "descEn": "A compact mechanical keyboard with hot swap switches and RGB backlight",
@@ -498,6 +509,7 @@ export const PRODUCTS: Product[] = [
     "icon": "GameController",
     "color": "#2A1F33",
     "price": 799.91,
+    "image": "https://images.pexels.com/photos/5208883/pexels-photo-5208883.jpeg?cs=tinysrgb&dpr=1&w=500",
     "nameEn": "Game pad pro",
     "nameAr": "يد تحكم جيم باد برو",
     "descEn": "A wireless controller with hall effect sticks and 40 hours of playtime",

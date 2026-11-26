@@ -1,7 +1,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { ComponentType, ReactNode } from 'react'
-import { ArrowCounterClockwise, ArrowRight, BatteryCharging, Camera, Check, Cpu, CreditCard, DeviceMobile, GameController, Globe, Headphones, Heart, Keyboard, Laptop, MagnifyingGlass, Minus, Package, PaperPlaneTilt, Plus, Scales, ShieldCheck, ShoppingCart, SpeakerHigh, DeviceTablet, Television, Trash, Truck, Watch, X } from '@phosphor-icons/react'
+import type { ReactNode } from 'react'
+import { ArrowCounterClockwise, ArrowRight, Check, Cpu, CreditCard, Globe, Heart, MagnifyingGlass, Minus, Package, Plus, Scales, ShieldCheck, ShoppingCart, Trash, Truck, X } from '@phosphor-icons/react'
 import en from '../locales/en/common.json'
 import ar from '../locales/ar/common.json'
 import { PRODUCTS, CATEGORIES, BRANDS } from './data'
@@ -11,22 +11,6 @@ type Lang = 'en' | 'ar'
 type Dict = Record<string, string>
 const DICTS: Record<Lang, Dict> = { en: en as unknown as Dict, ar: ar as unknown as Dict }
 type CartItem = { id: string; qty: number }
-
-const ICONS: Record<string, ComponentType<{ size?: number | string; weight?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone'; className?: string }>> = {
-  BatteryCharging: BatteryCharging,
-  Camera: Camera,
-  Cpu: Cpu,
-  DeviceMobile: DeviceMobile,
-  GameController: GameController,
-  Headphones: Headphones,
-  Keyboard: Keyboard,
-  Laptop: Laptop,
-  PaperPlaneTilt: PaperPlaneTilt,
-  SpeakerHigh: SpeakerHigh,
-  DeviceTablet: DeviceTablet,
-  Television: Television,
-  Watch: Watch,
-}
 
 function money(n: number, lang: Lang, currency: string): string {
   return n.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ' + currency
@@ -187,14 +171,11 @@ export default function App() {
   }
 
   const badgeLabel = (b?: string) => (b === 'new' ? t('product.badgeNew') : b === 'sale' ? t('product.badgeSale') : b === 'best' ? t('product.badgeBest') : '')
-  const tile = (p: Product, big = false) => {
-    const Icon = ICONS[p.icon] || Package
-    return (
-      <div className="flex items-center justify-center rounded-2xl" style={{ backgroundColor: p.color, height: big ? 240 : 160 }}>
-        <Icon size={big ? 96 : 64} weight="duotone" className="text-white opacity-90" />
-      </div>
-    )
-  }
+  const tile = (p: Product, big = false) => (
+    <div className="overflow-hidden rounded-2xl" style={{ height: big ? 240 : 160 }}>
+      <img src={p.image} alt={L(p.nameEn, p.nameAr)} loading="lazy" className="h-full w-full object-cover" />
+    </div>
+  )
   const card = (p: Product) => (
     <article key={p.id} className="motion-hover flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-transform duration-300 hover:-translate-y-1">
       <button type="button" onClick={() => openDetail(p)} className="block w-full p-4 pb-0 text-start" aria-label={L(p.nameEn, p.nameAr)}>
